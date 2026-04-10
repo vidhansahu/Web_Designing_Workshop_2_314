@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Employee Salary Management</title>
+<style>
+body {
+  font-family: Arial;
+  background-color: #eef2f3;
+  text-align: center;
+}
+.container {
+  width: 600px;
+  margin: 40px auto;
+  padding: 20px;
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 0 10px gray;
+}
+input, button {
+  padding: 8px;
+  margin: 5px;
+}
+button {
+  background-color: green;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+#output {
+  margin-top: 15px;
+  text-align: left;
+}
+</style>
+</head>
+
+<body>
+<div class="container">
+<h2>Employee Salary System</h2>
+
+<input type="text" id="name" placeholder="Name"><br>
+<input type="text" id="empId" placeholder="ID"><br>
+<input type="number" id="salary" placeholder="Salary"><br>
+<input type="text" id="dept" placeholder="Department"><br>
+
+<button onclick="addEmployee()">Add</button>
+<button onclick="showEmployees()">Show</button>
+<button onclick="totalSalary()">Total</button>
+<button onclick="averageSalary()">Average</button>
+
+<div id="output"></div>
+</div>
+
+<script>
+let employees = [];
+
+function addEmployee() {
+  let name = document.getElementById("name").value;
+  let id = document.getElementById("empId").value;
+  let salary = document.getElementById("salary").value;
+  let dept = document.getElementById("dept").value;
+
+  if(name=="" || id=="" || salary=="" || dept==""){
+    alert("Fill all fields");
+    return;
+  }
+
+  employees.push({name, id, salary: Number(salary), dept});
+  alert("Added");
+}
+
+function showEmployees(){
+  let out = "";
+  employees.forEach(e => {
+    out += e.name + " | " + e.id + " | " + e.salary + " | " + e.dept + "<br>";
+  });
+  document.getElementById("output").innerHTML = out;
+}
+
+function totalSalary(){
+  let total = 0;
+  employees.forEach(e => total += e.salary);
+  document.getElementById("output").innerHTML = "Total: " + total;
+}
+
+function averageSalary(){
+  if(employees.length==0){
+    document.getElementById("output").innerHTML = "No data";
+    return;
+  }
+  let total = 0;
+  employees.forEach(e => total += e.salary);
+  let avg = total / employees.length;
+  document.getElementById("output").innerHTML = "Average: " + avg.toFixed(2);
+}
+</script>
+
+</body>
+</html>
