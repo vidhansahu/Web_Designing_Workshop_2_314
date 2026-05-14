@@ -1,0 +1,122 @@
+/* Full Page Background */
+
+body{
+  margin:0;
+  padding:0;
+  font-family:Arial, sans-serif;
+  background:linear-gradient(135deg,#74ebd5,#ACB6E5);
+}
+
+/* Main App Container */
+
+.App{
+  height:100vh;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+}
+
+/* Registration Form Box */
+
+.form-container{
+  width:400px;
+  background:white;
+  padding:40px;
+  border-radius:20px;
+  box-shadow:0 10px 30px rgba(0,0,0,0.2);
+  animation:fadeIn 1s ease;
+}
+
+/* Heading */
+
+.form-title{
+  text-align:center;
+  color:#2c3e50;
+  margin-bottom:25px;
+  font-size:30px;
+  font-weight:bold;
+}
+
+/* Input Group */
+
+.input-group{
+  margin-bottom:18px;
+}
+
+/* Labels */
+
+.input-group label{
+  display:block;
+  margin-bottom:8px;
+  color:#444;
+  font-weight:bold;
+  font-size:14px;
+}
+
+/* Input Fields */
+
+.input-group input{
+  width:100%;
+  padding:12px;
+  border:1px solid #ccc;
+  border-radius:10px;
+  font-size:15px;
+  outline:none;
+  transition:0.3s;
+  box-sizing:border-box;
+  background:#f9f9f9;
+}
+
+/* Input Hover */
+
+.input-group input:focus{
+  border-color:#007bff;
+  box-shadow:0 0 8px rgba(0,123,255,0.4);
+  background:white;
+}
+
+/* Register Button */
+
+.register-btn{
+  width:100%;
+  padding:14px;
+  background:linear-gradient(to right,#007bff,#0056b3);
+  color:white;
+  border:none;
+  border-radius:10px;
+  font-size:17px;
+  font-weight:bold;
+  cursor:pointer;
+  transition:0.3s;
+}
+
+/* Button Hover */
+
+.register-btn:hover{
+  transform:translateY(-3px);
+  box-shadow:0 8px 20px rgba(0,123,255,0.4);
+}
+
+/* Success Message */
+
+.success-message{
+  margin-top:15px;
+  text-align:center;
+  color:green;
+  font-weight:bold;
+  font-size:15px;
+}
+
+/* Animation */
+
+@keyframes fadeIn{
+  from{
+    opacity:0;
+    transform:translateY(30px);
+  }
+
+  to{
+    opacity:1;
+    transform:translateY(0);
+  }
+}
